@@ -21,6 +21,10 @@ import Home from './components/Home';
 import Login from './components/Login';
 import PickupsList from './components/PickupsList';
 import ShowPickup from './components/ShowPickup';
+import UsersList from './components/users/List';
+import ShowUser from './components/users/Show';
+import CreateUser from './components/users/Create';
+import EditUser from './components/users/Edit';
 //
 function App() {
 
@@ -35,8 +39,9 @@ function App() {
           </Nav.Link>
             <Nav.Link href="/home" style={{marginTop: 15, color: 'white', fontWeight: 'bold'}}>Home</Nav.Link>
 
-            <Nav.Link href="/rewards" style={{marginTop: 15, color: 'white', marginLeft: 10, fontWeight: 'bold'}}>Rewards Management</Nav.Link>
-            <Nav.Link href="/pickups" style={{marginTop: 15, color: 'white', marginLeft: 10, fontWeight: 'bold'}}>Pickups Management</Nav.Link>
+            <Nav.Link href="/rewards" style={{marginTop: 15, color: 'white', marginLeft: 10, fontWeight: 'bold'}}>Rewards</Nav.Link>
+            <Nav.Link href="/pickups" style={{marginTop: 15, color: 'white', marginLeft: 10, fontWeight: 'bold'}}>Pickups</Nav.Link>
+            <Nav.Link href="/users" style={{marginTop: 15, color: 'white', marginLeft: 10, fontWeight: 'bold'}}>Users</Nav.Link>
             <Nav.Link href="/login" style={{marginTop: 10, color: 'white', marginLeft: 700}}>
             <img src={user} style={{height: 35}}/>
             </Nav.Link>
@@ -55,7 +60,11 @@ function App() {
           <Route render ={()=> < CreateReward />} path="/createreward" />
           <Route render ={()=> < ShowReward />} path="/showreward/:id" />
           <Route render ={()=> <PickupsList />} path="/pickups" />
+          <Route render ={()=> <UsersList />} path="/users" />
           <Route render ={()=> < ShowPickup />} path="/showpickup/:id" />
+          <Route render ={()=> < ShowUser />} path="/show_user/:id" />
+          <Route render ={()=> < CreateUser />} path="/create_user" />
+          <Route render ={()=> < EditUser />} path="/edit_user/:id" />
       </div>
       {/* {path==""?(
       <Home/>
